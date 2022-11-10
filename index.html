@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <textarea style="width:200px; height: 60px;" id="area"></textarea><br/>
+    <button class="button">Send</button>
+    <script>
+      const textArea = document.querySelector("#area");
+      const button = document.querySelector(".button");
+      if (window.localStorage.getItem("value")) {
+        textArea.value = window.localStorage.getItem("value");
+      }
+
+      button.addEventListener("click", (e)=> {
+        window.localStorage.setItem("value", textArea.value);
+      })
+    </script>
+  </body>
+</html>
